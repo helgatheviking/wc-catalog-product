@@ -73,7 +73,7 @@ if ( $product->has_pdfs() ) : ?>
 		 	
 		 	?>
 		 		
- 			<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( WC_MNM_Core_Compatibility::get_id( $product ) ); ?>" />
+ 			<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" />
 
 			<button type="submit" class="single_add_to_cart_button mnm_add_to_cart_button button alt"><?php echo $product->single_add_to_cart_text(); ?></button>
  		

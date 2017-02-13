@@ -20,6 +20,15 @@ class WC_Product_Catalog_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 		'_cover_id',
 		'_pdf_ids',
 	);
+	
+	/**
+	 * Maps extended properties to meta keys.
+	 * @var array
+	 */
+	protected $props_to_meta = array(
+		'cover_id'         => '_cover_id',
+		'pdf_ids' => '_pdf_ids'
+	);
 
 
 	/*
@@ -29,7 +38,7 @@ class WC_Product_Catalog_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 	*/
 
 	/**
-	 * Read extra data associated with the product, like button text or product URL for external products.
+	 * Read extra data associated with the product.
 	 *
 	 * @param WC_Product
 	 * @since 2.7.0
@@ -37,24 +46,15 @@ class WC_Product_Catalog_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 	protected function read_extra_data( &$product ) {
 		foreach ( $product->get_extra_data_keys() as $key ) {
 			$function = 'set_' . $key;
-			if ( is_callable( array( $product, $function ) ) ) {
+			if ( is_callable( array( $product, $function ) ) ) { 
 				$meta_key = isset( $this->props_to_meta[$key] ) ? $this->props_to_meta[$key] : '_' . $key;
 				$product->{$function}( get_post_meta( $product->get_id(), $meta_key, true ) );
 			}
 		}
-	}
-
-
-	/**
-	 * Read product data.
-	 *
-	 * @since 2.7.0
-	 */
-	protected function read_product_data( &$product ) {
-		parent::read_product_data( $product );
 		$pdfs = $this->read_pdfs( $product );
 		$product->set_pdfs( $pdfs );
 	}
+
 
 	/**
 	 * Loads variation child IDs.
@@ -67,7 +67,7 @@ class WC_Product_Catalog_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 		$pdf_transient_name = 'wc_catalog_pdf_' . $product->get_id();
 		$pdfs                = get_transient( $pdf_transient_name );
 
-		if ( empty( $pdfs ) || ! is_array( $pdfs ) || $force_read ) {
+		if ( false === $pdfs || ! is_array( $pdfs ) || $force_read ) {
 			$args = array(
                     'post_type' => 'attachment',
                     'post_status' => 'inherit',
@@ -77,7 +77,7 @@ class WC_Product_Catalog_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
                     'orderby'=>'post__in'
                 );
 
-			$pdfs = get_posts( apply_filters( 'wc_catalog_children_pdf_args', $args, $product, false ) );
+			$pdfs = $product->get_pdf_ids() ? get_posts( apply_filters( 'wc_catalog_children_pdf_args', $args, $product, false ) ) : array();
 
 			set_transient( $pdf_transient_name, $pdfs, DAY_IN_SECONDS * 30 );
 		}

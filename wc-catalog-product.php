@@ -33,6 +33,7 @@ class WC_Catalog_Product {
 	const VERSION = '0.1.0';
 	const PREFIX  = 'WC_Catalog_Product';
 	const REQUIRED_WC = '2.7.0';
+	const DIR = 'wc_catalogs';
 
 	/**
 	 * @var WC_Catalog_Product - the single instance of the class
@@ -63,8 +64,6 @@ class WC_Catalog_Product {
 	 * Constructor.
 	 */
 	public function __construct(){
-
-		register_activation_hook( __FILE__, array( __CLASS__, 'install' ) );
 
 		$this->includes();
 
@@ -202,25 +201,30 @@ class WC_Catalog_Product {
      * @return string
      */
      public function delete_pdf_query( $post_id ){
-		delete_transient( 'wc_catalog_pdf_' . $post_id );
+     
+    	if ( $post_id > 0 ) {
+			delete_transient( 'wc_catalog_pdf_' . $post_id );
+			// Increments the transient version to invalidate cache
+			WC_Cache_Helper::get_transient_version( 'product', true );
+    	}
+		
 	}
 
 	/**
 	 * Create files/directories.
 	 */
-	private static function install() {
+	public static function install() {
 		// Install files and folders for uploading files and prevent hotlinking
 		$upload_dir      = wp_upload_dir();
-		$download_method = get_option( 'woocommerce_file_download_method', 'force' );
 
 		$files = array(
 			array(
-				'base' 		=> $upload_dir['basedir'] . '/wc_catalogs',
+				'base' 		=> $upload_dir['basedir'] . '/' . SELF::DIR,
 				'file' 		=> 'index.html',
 				'content' 	=> '',
 			),
 			array(
-				'base' 		=> $upload_dir['basedir'] . '/wc_catalogs',
+				'base' 		=> $upload_dir['basedir'] . '/' . SELF::DIR,
 				'file' 		=> '.htaccess',
 				'content' 	=> 'deny from all',
 			)
@@ -254,3 +258,6 @@ function WC_Catalog_Product() {
 
 // Launch the whole plugin
 add_action( 'woocommerce_loaded', 'WC_Catalog_Product' );
+
+// Install hook
+register_activation_hook( __FILE__, array( 'WC_Catalog_Product', 'install' ) );

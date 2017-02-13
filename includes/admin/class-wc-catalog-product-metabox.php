@@ -24,7 +24,7 @@ class WC_Catalog_Product_Metabox {
 			add_filter( 'product_type_selector', array( $this, 'product_selector_filter' ) );
 			add_action( 'woocommerce_product_data_tabs', array( $this, 'product_data_tab' ) );
 			add_action( 'woocommerce_product_data_panels', array( $this, 'product_data_panel' ) );
-			add_action( 'woocommerce_admin_process_product_object', array( $this, 'process_data' ) );
+			add_action( 'woocommerce_admin_process_product_object', array( $this, 'process_data' ), 20 );
 
 			// Admin Scripts
 			add_action( 'admin_enqueue_scripts', array( $this, 'meta_box_script' ), 20 );
@@ -149,8 +149,6 @@ class WC_Catalog_Product_Metabox {
 
 			$cover_id = isset( $_POST['pdf_cover_id'] ) ? intval( sanitize_text_field( $_POST['pdf_cover_id'] ) ) : 0;
 			$pdf_ids = isset( $_POST['pdf_gallery_ids'] ) ? array_filter( explode( ',', sanitize_text_field( $_POST['pdf_gallery_ids'] ) ) ) : array();
-
-			error_log('pdf IDS = ' .json_encode($pdf_ids));
 
 			// Show a notice if the user hasn't selected any items for the container.
 			if ( empty( $pdf_ids ) ) {

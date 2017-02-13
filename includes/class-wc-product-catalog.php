@@ -146,18 +146,18 @@ class WC_Product_Catalog extends WC_Product_Simple {
 	 * @since 2.7.0
 	 * @param array $image_ids
 	 */
-	public function set_pdf_ids( $image_ids ) {
-		$image_ids = wp_parse_id_list( $image_ids );
+	public function set_pdf_ids( $ids ) {
+		$ids = wp_parse_id_list( $ids );
 
 		if ( $this->get_object_read() ) {
-			$image_ids = array_filter( $image_ids, array( $this, 'attachment_is_pdf' ) );
+			$ids = array_filter( $ids, array( $this, 'attachment_is_pdf' ) );
 		}
 
-		$this->set_prop( 'pdf_ids', $image_ids );
+		$this->set_prop( 'pdf_ids', $ids );
 	}
 
 	/**
-	 * Set main cover image ID.
+	 * Set main cover pdf ID.
 	 *
 	 * @since 2.7.0
 	 * @param int $image_id

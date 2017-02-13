@@ -151,7 +151,7 @@ class WC_Catalog_Proccesor {
      */ 
     public function get_url( $file_name = '' ) {
         $wp_upload_dir = wp_upload_dir();
-        return trailingslashit( $wp_upload_dir['baseurl'] ) . $file_name;
+        return trailingslashit( $wp_upload_dir['baseurl'] ) . WC_Catalog_Product::DIR . '/' . $file_name;
     }
 
     /**
@@ -160,7 +160,7 @@ class WC_Catalog_Proccesor {
      */ 
     public function get_path( $file_name = '' ) {
         $wp_upload_dir = wp_upload_dir();
-        return trailingslashit( $wp_upload_dir['basedir'] ) . $file_name;
+        return trailingslashit( $wp_upload_dir['basedir'] ) . WC_Catalog_Product::DIR . '/' . $file_name;
     }
 
     /**
