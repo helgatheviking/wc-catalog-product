@@ -3,7 +3,7 @@
  * Plugin Name: WC Catalog Product
  * Plugin URI:  https://github.com/helgatheviking/wc-catalog-product
  * Description: Build your own catalog from a collection of PDFs
- * Version:     0.1.0
+ * Version: 0.1.0-beta
  * Author:      Kathy Darling
  * Author URI:  http://www.kathyisawesome.com
  * License: GNU General Public License v3.0
@@ -144,7 +144,7 @@ class WC_Catalog_Product {
 	 * @since  0.1.0
 	 */
 	public function admin_notice() {
-		echo '<div class="error"><p>' . sprintf( __( 'WC Catalog Product requires at least WooCommerce %s in order to function. Please upgrade WooCommerce.', 'woocommerce-mix-and-match-products', 'wc-catalog-product' ), self::REQUIRED_WC ) . '</p></div>';
+		echo '<div class="error"><p>' . sprintf( __( 'WC Catalog Product requires at least WooCommerce %s in order to function. Please upgrade WooCommerce.', 'wc-catalog-product' ), self::REQUIRED_WC ) . '</p></div>';
 	}
 
 

@@ -1,94 +1,20 @@
 @charset "UTF-8";
-/**
- * Deprecated
- * Fallback for bourbon equivalent
- */
-/**
- * Deprecated
- * Vendor prefix no longer required.
- */
-/**
- * Objects
- */
-#catalog_product_data .custom_catalog_container {
-  padding: 5px 20px 5px 12px;
-}
-#catalog_product_data .pdf_catalog, #catalog_product_data add_pdf_cover, #catalog_product_data .add_pdf {
-  margin-bottom: 9px;
-}
-#catalog_product_data .pdf_catalog {
-  width: 100%;
-  *zoom: 1;
-  margin: 0;
-}
-#catalog_product_data .pdf_catalog:before, #catalog_product_data .pdf_catalog:after {
-  content: " ";
-  display: table;
-}
-#catalog_product_data .pdf_catalog:after {
-  clear: both;
-}
-#catalog_product_data .pdf_catalog .pdf-row,
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder {
-  background: #f7f7f7;
-  padding: .25em .5em;
-  width: 100%;
-  display: block;
-  margin: 9px 9px 0 0;
-  position: relative;
-  box-sizing: border-box;
-}
-#catalog_product_data .pdf_catalog .pdf-row img,
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder img {
-  width: 30px;
-  height: auto;
-}
-#catalog_product_data .pdf_catalog .pdf-row span,
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder span {
-  padding: 5px;
-  display: block;
-  word-wrap: break-word;
-}
-#catalog_product_data .pdf_catalog .pdf-row a.delete-pdf,
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder a.delete-pdf {
-  text-decoration: none;
-}
-#catalog_product_data .pdf_catalog .pdf-row a.delete-pdf:before,
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder a.delete-pdf:before {
-  font-family: 'dashicons';
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  margin-right: .618em;
-  content: "";
-  text-decoration: none;
-  color: white;
-  background-color: #000;
-  border-radius: 100%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-#catalog_product_data .pdf_catalog .pdf-row a.delete-pdf:hover before,
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder a.delete-pdf:hover before {
-  background-color: red;
-}
-#catalog_product_data .pdf_catalog .ui-sortable-handle {
-  cursor: move !important;
-}
-#catalog_product_data .pdf_catalog .pdf-sortable-placeholder {
-  border: 3px dashed #dddddd;
-  position: relative;
-}
-#catalog_product_data .pdf_catalog .pdf td {
-  width: 60%;
-}
-#catalog_product_data .pdf_catalog .pdf td:first-child {
-  width: 10%;
-}
-#catalog_product_data .pdf_catalog .pdf td:last-child {
-  width: 20%;
-}
-
-/*# sourceMappingURL=wc-catalog-product-metabox.css.map */
+/** Deprecated Fallback for bourbon equivalent */
+/** Deprecated Vendor prefix no longer required. */
+/** Objects */
+#catalog_product_data .custom_catalog_container { padding: 5px 20px 5px 12px; }
+#catalog_product_data .pdf_catalog, #catalog_product_data add_pdf_cover, #catalog_product_data .add_pdf { margin-bottom: 9px; }
+#catalog_product_data .pdf_catalog { width: 100%; *zoom: 1; margin: 0; }
+#catalog_product_data .pdf_catalog:before, #catalog_product_data .pdf_catalog:after { content: " "; display: table; }
+#catalog_product_data .pdf_catalog:after { clear: both; }
+#catalog_product_data .pdf_catalog .pdf-row, #catalog_product_data .pdf_catalog .pdf-sortable-placeholder { background: #f7f7f7; padding: .25em .5em; width: 100%; display: block; margin: 9px 9px 0 0; position: relative; box-sizing: border-box; }
+#catalog_product_data .pdf_catalog .pdf-row img, #catalog_product_data .pdf_catalog .pdf-sortable-placeholder img { width: 30px; height: auto; }
+#catalog_product_data .pdf_catalog .pdf-row span, #catalog_product_data .pdf_catalog .pdf-sortable-placeholder span { padding: 5px; display: block; word-wrap: break-word; }
+#catalog_product_data .pdf_catalog .pdf-row a.delete-pdf, #catalog_product_data .pdf_catalog .pdf-sortable-placeholder a.delete-pdf { text-decoration: none; }
+#catalog_product_data .pdf_catalog .pdf-row a.delete-pdf:before, #catalog_product_data .pdf_catalog .pdf-sortable-placeholder a.delete-pdf:before { font-family: 'dashicons'; speak: none; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; margin-right: .618em; content: ""; text-decoration: none; color: white; background-color: #000; border-radius: 100%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); }
+#catalog_product_data .pdf_catalog .pdf-row a.delete-pdf:hover before, #catalog_product_data .pdf_catalog .pdf-sortable-placeholder a.delete-pdf:hover before { background-color: red; }
+#catalog_product_data .pdf_catalog .ui-sortable-handle { cursor: move !important; }
+#catalog_product_data .pdf_catalog .pdf-sortable-placeholder { border: 3px dashed #dddddd; position: relative; }
+#catalog_product_data .pdf_catalog .pdf td { width: 60%; }
+#catalog_product_data .pdf_catalog .pdf td:first-child { width: 10%; }
+#catalog_product_data .pdf_catalog .pdf td:last-child { width: 20%; }

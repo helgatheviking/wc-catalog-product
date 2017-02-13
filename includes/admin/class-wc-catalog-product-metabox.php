@@ -87,7 +87,7 @@ class WC_Catalog_Product_Metabox {
 		<div id="catalog_product_data" class="custom-catalog_panel panel woocommerce_options_panel wc-metaboxes-wrapper">
 			<div class="options_group pdf_cover_container custom_catalog_container">
 
-				<label><?php _e( 'PDF Cover Page', 'wc-custom-catalog' ); ?><?php wc_help_tip( __( 'Optionally, add a PDF that will always be used as the cover page for the resulting merged PDF.', 'wc-custom-catalog' ) );?></label>
+				<label><?php _e( 'PDF Cover Page', 'wc-catalog-product' ); ?><?php wc_help_tip( __( 'Optionally, add a PDF that will always be used as the cover page for the resulting merged PDF.', 'wc-catalog-product' ) );?></label>
 
 				<table class="pdf_catalog">
 
@@ -97,7 +97,7 @@ class WC_Catalog_Product_Metabox {
 						echo '<tr class="pdf pdf-row" data-attachment_id="' . esc_attr( $pdf_cover_id ) . '">
 								<td>' . wp_get_attachment_image( $pdf_cover_id, 'thumbnail', true, array( 'alt' => esc_attr( get_the_title( $pdf_cover_id ) ) ) ) . '</td>
 								<td>'. get_the_title( $pdf_cover_id ) . '</td>
-								<td><a href="#" class="delete-pdf hide-if-no-js">' . __( 'Delete PDF', 'wc-custom-catalog' ) . '</a></td>
+								<td><a href="#" class="delete-pdf hide-if-no-js">' . __( 'Delete PDF', 'wc-catalog-product' ) . '</a></td>
 							</tr>';
 
 					}
@@ -107,10 +107,10 @@ class WC_Catalog_Product_Metabox {
 
 				<input type="hidden" name="pdf_cover_id" value="<?php echo esc_attr( $pdf_cover_id ); ?>" />
 
-				<button class="add_pdf_cover hide-if-no-js button"><?php _e( 'Add PDF Cover', 'wc-custom-catalog' ); ?></button>	
+				<button class="add_pdf_cover hide-if-no-js button"><?php _e( 'Add PDF Cover', 'wc-catalog-product' ); ?></button>	
 			</div>
 			<div class="options_group custom_catalog_container pdf_catalog_container">
-				<label><?php _e( 'PDF Catalogs', 'wc-custom-catalog' ); ?><?php wc_help_tip( __( 'Upload PDFs that will be available for merging.', 'wc-custom-catalog' ) );?></label>
+				<label><?php _e( 'PDF Catalogs', 'wc-catalog-product' ); ?><?php wc_help_tip( __( 'Upload PDFs that will be available for merging.', 'wc-catalog-product' ) );?></label>
 				
 				<table class="pdf_catalog pdf_catalog_sortable">
 					<?php
@@ -120,7 +120,7 @@ class WC_Catalog_Product_Metabox {
 								echo '<tr class="pdf pdf-row" data-attachment_id="' . esc_attr( $id ) . '">
 									<td>' . wp_get_attachment_image( $id, 'thumbnail', true ) . '</td>
 									<td>'. get_the_title( $id ) . '</td>
-									<td><a href="#" class="delete-pdf hide-if-no-js">' . __( 'Delete PDF', 'wc-custom-catalog' ) . '</a></td>
+									<td><a href="#" class="delete-pdf hide-if-no-js">' . __( 'Delete PDF', 'wc-catalog-product' ) . '</a></td>
 								</tr>';
 							}
 						}
@@ -129,7 +129,7 @@ class WC_Catalog_Product_Metabox {
 
 				<input type="hidden" name="pdf_gallery_ids" value="<?php echo esc_attr( implode( ',', $pdfs ) ); ?>" />
 
-				<button class="button add_pdf hide-if-no-js"><?php _e( 'Add PDF to Collection', 'wc-custom-catalog' )?></button>
+				<button class="button add_pdf hide-if-no-js"><?php _e( 'Add PDF to Collection', 'wc-catalog-product' )?></button>
 
 			</div> <!-- options group -->
 		</div>
@@ -154,7 +154,7 @@ class WC_Catalog_Product_Metabox {
 
 			// Show a notice if the user hasn't selected any items for the container.
 			if ( empty( $pdf_ids ) ) {
-				WC_Admin_Meta_Boxes::add_error( __( 'Please select at least one PDF for use in this custom catalog product.', 'wc-custom-catalog' ) );
+				WC_Admin_Meta_Boxes::add_error( __( 'Please select at least one PDF for use in this custom catalog product.', 'wc-catalog-product' ) );
 			}
 
 			$props = array(
@@ -195,10 +195,10 @@ class WC_Catalog_Product_Metabox {
 
 		$i18n = array( 'document_icon' => includes_url( 'images/media/document.png' ),
 						'delete_string' => __( 'Delete PDF', 'wc-catalog-product' ),
-						'cover_uploader_title' => __( 'Add PDF Cover', 'wc-custom-catalog' ),
-						'cover_uploader_button_text' => __( 'Set cover', 'wc-custom-catalog' ),
-						'pdfs_uploader_title' => __( 'Add PDF to Collection', 'wc-custom-catalog' ),
-						'pdfs_uploader_button_text' => __( 'Add to collection', 'wc-custom-catalog' )
+						'cover_uploader_title' => __( 'Add PDF Cover', 'wc-catalog-product' ),
+						'cover_uploader_button_text' => __( 'Set cover', 'wc-catalog-product' ),
+						'pdfs_uploader_title' => __( 'Add PDF to Collection', 'wc-catalog-product' ),
+						'pdfs_uploader_button_text' => __( 'Add to collection', 'wc-catalog-product' )
 		);
 
 		wp_localize_script( 'wc_catalog_product_metabox', 'wc_catalog_product_metabox', $i18n );

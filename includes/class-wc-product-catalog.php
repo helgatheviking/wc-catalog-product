@@ -65,7 +65,7 @@ class WC_Product_Catalog extends WC_Product_Simple {
 	 * @return string
 	 */
 	public function add_to_cart_text() {
-		return apply_filters( 'woocommerce_product_add_to_cart_text', __( 'Customize', 'wc-custom-catalog' ), $this );
+		return apply_filters( 'woocommerce_product_add_to_cart_text', __( 'Customize', 'wc-catalog-product' ), $this );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class WC_Product_Catalog extends WC_Product_Simple {
 	 * @return string
 	 */
 	public function AAAsingle_add_to_cart_text() {
-		return apply_filters( 'woocommerce_product_single_add_to_cart_text', __( 'Order Print Copy', 'wc-custom-catalog' ), $this );
+		return apply_filters( 'woocommerce_product_single_add_to_cart_text', __( 'Order Print Copy', 'wc-catalog-product' ), $this );
 	}
 
 
