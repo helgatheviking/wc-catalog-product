@@ -1,16 +1,16 @@
 {
-  "title": "WP PDFMerger",
-  "name": "wp-pdfmerger",
+  "title": "WC Catalog Product",
+  "name": "wc-catalog-product",
   "version": "0.1.0-beta",
-  "description": "Display PDFs files and allow them to be merged into 1",
+  "description": "Build your own catalog from a collection of PDFs1",
   "main": "Gruntfile.js",
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/helgatheviking/pdfmerger"
+    "url": "https://github.com/helgatheviking/wc-catalog-product"
   },
   "bugs": {
-    "url": "https://github.com/helgatheviking/pdfmerger/issues"
+    "url": "https://github.com/helgatheviking/wc-catalog-product/issues"
   },
   "author": "helgatheviking",
   "devDependencies": {

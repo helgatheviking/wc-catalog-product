@@ -197,7 +197,7 @@ grunt.registerTask( 'docs', [ 'wp_readme_to_markdown'] );
 
 grunt.registerTask( 'test', [ 'jshint', 'newer:uglify' ] );
 
-grunt.registerTask( 'build', [ 'replace', 'newer:uglify', 'addtextdomain', 'makepot', 'sass:prod', 'copy', 'compress' ] );
+grunt.registerTask( 'build', [ 'replace', 'newer:uglify', 'addtextdomain', 'makepot', 'sass:prod' ] );
 
 // bump version numbers 
 // grunt release		1.4.1 -> 1.4.2
