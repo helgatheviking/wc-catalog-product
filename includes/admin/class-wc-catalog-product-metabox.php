@@ -60,10 +60,10 @@ class WC_Catalog_Product_Metabox {
 		$tabs[ 'catalog_options' ] = array(
 			'label'  => __( 'Catalog Product', 'wc-catalog-product' ),
 			'target' => 'catalog_product_data',
-			'class'  => array( 'show_if_custom-catalog', 'custom-catalog_product_tab', 'custom-catalog_product_options' )
+			'class'  => array( 'show_if_catalog', 'custom-catalog_product_tab', 'custom-catalog_product_options' )
 		);
 
-		$tabs[ 'inventory' ][ 'class' ][] = 'show_if_custom-catalog';
+		$tabs[ 'inventory' ][ 'class' ][] = 'show_if_catalog';
 
 		return $tabs;
 	}
