@@ -1,0 +1,32 @@
+{
+  "title": "WP PDFMerger",
+  "name": "wp-pdfmerger",
+  "version": "0.1.0-beta",
+  "description": "Display PDFs files and allow them to be merged into 1",
+  "main": "Gruntfile.js",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helgatheviking/pdfmerger"
+  },
+  "bugs": {
+    "url": "https://github.com/helgatheviking/pdfmerger/issues"
+  },
+  "author": "helgatheviking",
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-compress": "^1.4.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-sass": "~1.0.0",
+    "grunt-contrib-uglify": "~2.1.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-newer": "~1.2.0",
+    "grunt-text-replace": "~0.4.0",
+    "grunt-wp-i18n": "~1.0.0",
+    "grunt-wp-readme-to-markdown": "~2.0.1",
+    "jshint-stylish": "~2.2.1",
+    "load-grunt-tasks": "~3.5.2"
+  }
+}

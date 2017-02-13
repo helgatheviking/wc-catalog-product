@@ -1,0 +1,17 @@
+{
+    "config": {
+        "vendor-dir": "assets/composer"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vaza18/PDFMerger"
+        }
+    ],
+    "require": {
+        "vaza18/PDFMerger": "dev-master"
+    },
+    "autoload": {
+        "classmap": [ "assets/composer/vaza18/pdfmerger/PDFMerger.php" ]
+    }
+}

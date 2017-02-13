@@ -1,0 +1,4 @@
+=== WC Catalog Product ===
+
+2017.2.3 - version 1.0
+ * First Release

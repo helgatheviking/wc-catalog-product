@@ -1,0 +1,44 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "2d6ff28d0fc09fa42aa2e3a7531146a8",
+    "packages": [
+        {
+            "name": "vaza18/pdfmerger",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vaza18/PDFMerger.git",
+                "reference": "66dc7e2b18c1bc3ff9f577133e080575027b7723"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vaza18/PDFMerger/zipball/66dc7e2b18c1bc3ff9f577133e080575027b7723",
+                "reference": "66dc7e2b18c1bc3ff9f577133e080575027b7723",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "description": "PDFMerger for PHP (PHP5 Compatible) by Jarrod Nettles",
+            "support": {
+                "source": "https://github.com/vaza18/PDFMerger/tree/master"
+            },
+            "time": "2016-02-18 17:05:14"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "vaza18/pdfmerger": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

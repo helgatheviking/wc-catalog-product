@@ -1,0 +1,4 @@
+node_modules/
+.sass-cache/
+*.bak
+auth.json

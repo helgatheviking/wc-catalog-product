@@ -1,0 +1,80 @@
+@import "mixins";
+
+#catalog_product_data {
+
+	.custom_catalog_container {
+		padding: 5px 20px 5px 12px; // match indentation of .form-field
+	}
+
+	.pdf_catalog, add_pdf_cover, .add_pdf {
+		margin-bottom: 9px;
+	}
+
+	.pdf_catalog {
+
+		width: 100%;
+
+		@include clearfix();
+		margin: 0;
+		
+		.pdf-row,
+		.pdf-sortable-placeholder {
+			background: #f7f7f7;
+			padding: .25em .5em;
+			width: 100%;
+			display: block;
+			margin: 9px 9px 0 0;
+			position: relative;
+			box-sizing: border-box;
+
+			img {
+				width: 30px;
+				height: auto;
+			}
+			span {
+			    padding: 5px;
+			    display: block;
+			    word-wrap: break-word;
+			}
+
+			a.delete-pdf {
+	
+				text-decoration: none;
+				
+					&:before {
+
+						@include iconbefore( "\f335" );
+						color: white;
+						background-color: #000;
+						@include border-radius(100%);
+						box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+					}
+
+					&:hover before {
+						background-color: red;
+					}
+				}
+			}
+
+		.ui-sortable-handle{
+			cursor: move !important;
+		}
+
+		.pdf-sortable-placeholder {
+			border: 3px dashed #dddddd;
+			position: relative;
+		}
+
+		.pdf td  {
+			width: 60%;
+			&:first-child {
+				width: 10%;
+			}
+			&:last-child {
+				width: 20%;
+			}
+		}
+
+	}
+
+}
