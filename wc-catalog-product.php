@@ -75,6 +75,9 @@ class WC_Catalog_Product {
 
         // Delete PDF transient.
 		add_action( 'woocommerce_delete_product_transients', array( $this, 'delete_pdf_query' ) );
+		
+		// Sort the media library by PDF
+		add_filter( 'post_mime_types', array( $this, 'modify_post_mime_types' ) );
 	}
 
 
@@ -196,6 +199,25 @@ class WC_Catalog_Product {
     	}
 		
 	}
+
+
+	/**
+	 * Create files/directories.
+	 * @param array $post_mime_types
+	 * @return array
+	 */
+	public function modify_post_mime_types( $post_mime_types ) {
+	 
+	    // select the mime type, here: 'application/pdf'
+	    // then we define an array with the label values
+	 
+	    $post_mime_types['application/pdf'] = array( __( 'PDFs', 'wc-catalog-product' ), __( 'Manage PDFs', 'wc-catalog-product' ), _n_noop( 'PDF <span class="count">(%s)</span>', 'PDFs <span class="count">(%s)</span>', 'wc-catalog-product' ) );
+	 
+	    // then we return the $post_mime_types variable
+	    return $post_mime_types;
+	 
+	}
+
 
 	/**
 	 * Create files/directories.
