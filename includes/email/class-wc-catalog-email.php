@@ -35,8 +35,7 @@ class WC_Catalog_Email {
 	 * @return array
 	 */
 	public function register_email( $emails ) {
-		require_once( 'class-wc-email-new-catalog-order.php' );
-		$emails['WC_Email_New_Catalog_Order'] = new WC_Email_New_Catalog_Order();
+		$emails['WC_Email_New_Catalog_Order'] = include( 'class-wc-email-new-catalog-order.php' );
 		return $emails;
 	}
 
