@@ -46,7 +46,13 @@ class WC_Catalog_Email {
 	 * @return array
 	 */
 	public function resend_email( $emails ) {
-		$emails[] = 'new_catalog_order';
+		global $post;
+		$order_id = $post->ID;
+
+		if ( ! empty( wc_catalog_get_catalogs_for_order( $order_id ) ) ) {
+			$emails[] = 'new_catalog_order';
+		}
+		
 		return $emails;
 	}
 }

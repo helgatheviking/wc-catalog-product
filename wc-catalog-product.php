@@ -70,9 +70,6 @@ class WC_Catalog_Product {
 		// Load translation files
 		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
 
-		// Include required files
-		add_action( 'after_setup_theme', array( $this, 'template_includes' ) );
-
 		// delete the temp file via cron job
         add_action( 'wc_catalog_product_delete_temporary_file', array( $this, 'delete_temporary_file' ), 10, 1 );
 
@@ -108,6 +105,7 @@ class WC_Catalog_Product {
 		require_once( 'includes/class-wc-catalog-product-cart.php' );
 		require_once( 'includes/class-wc-product-catalog.php' );
 		require_once( 'includes/class-wc-catalog-product-order.php' );
+		require_once( 'includes/wc-catalog-product-functions.php' );
 		
 		// Include admin class to handle all back-end functions.
 		if( is_admin() ){
@@ -123,17 +121,6 @@ class WC_Catalog_Product {
 		$this->processor = new WC_Catalog_Proccesor();
 
 		do_action( 'wc_catalog_product_loaded' );
-	}
-
-	/**
-	 * Include frontend functions and hooks
-	 *
-	 * @return void
-	 * @since  0.1.0
-	 */
-	public static function template_includes(){
-		require_once( 'includes/wc-catalog-product-template-functions.php' );
-		require_once( 'includes/wc-catalog-product-template-hooks.php' );
 	}
 
 
@@ -256,8 +243,8 @@ function WC_Catalog_Product() {
 	return WC_Catalog_Product::instance();
 }
 
-// Launch the whole plugin
+// Launch the whole plugin.
 add_action( 'woocommerce_loaded', 'WC_Catalog_Product' );
 
-// Install hook
+// Install hook.
 register_activation_hook( __FILE__, array( 'WC_Catalog_Product', 'install' ) );

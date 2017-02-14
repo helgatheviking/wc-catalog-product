@@ -32,6 +32,8 @@ class WC_Email_New_Catalog_Order extends WC_Email {
 
 		$this->template_html    = 'emails/admin-new-catalog-order.php';
 		$this->template_plain   = 'emails/plain/admin-new-catalog-order.php';
+		
+		$this->catalogs 		= array();
 
 		// Triggers for this email
 		add_action( 'woocommerce_order_status_pending_to_processing_notification', array( $this, 'trigger' ), 10, 2 );
@@ -57,6 +59,14 @@ class WC_Email_New_Catalog_Order extends WC_Email {
 			$order = wc_get_order( $order_id );
 		}
 
+		// Set the catalogs for this email.
+		$this->catalogs = wc_catalog_get_catalogs_for_order( $order );
+		
+		// Don't send if it doesn't have any catalogs or it not enabled.
+		if ( ! $this->is_enabled() || ! $this->get_recipient() || empty( $this->catalogs ) ) {
+			return;
+		}
+
 		if ( is_a( $order, 'WC_Order' ) ) {
 			$this->object                  = $order;
 			$this->find['order-date']      = '{order_date}';
@@ -64,11 +74,7 @@ class WC_Email_New_Catalog_Order extends WC_Email {
 			$this->replace['order-date']   = date_i18n( wc_date_format(), $this->object->get_date_created() );
 			$this->replace['order-number'] = $this->object->get_order_number();
 		}
-
-		if ( ! $this->is_enabled() || ! $this->get_recipient() ) {
-			return;
-		}
-
+		
 		$this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
 	}
 
@@ -118,12 +124,12 @@ class WC_Email_New_Catalog_Order extends WC_Email {
 
     	$file = array();
 
-		foreach( $this->object->get_items() as $order_item_id => $order_item ){
-			$order_item_object = new WC_Order_Item_Product( $order_item_id );
-			$merge_ids = $order_item_object->get_meta( '_catalog_merge_ids', true );
-			if( $merge_ids && $file_name = WC_Catalog_Product()->processor->create_pdf( $merge_ids, $order_item_object->get_product_id(), 'email' ) ) {
-				$file_path = WC_Catalog_Product()->processor->get_path( $file_name );
-				$file[] =  $file_path;
+		if( ! empty( $this->catalogs ) ) {
+			foreach( $this->catalogs as $catalog ){
+				if( $file_name = WC_Catalog_Product()->processor->create_pdf( $catalog[ 'merge_ids' ], $catalog[ 'product_id' ], 'email' ) ) {
+					$file_path = WC_Catalog_Product()->processor->get_path( $file_name );
+					$file[] =  $file_path;
+				}
 			}
 		}
 
