@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @category	Class
  * @author 		Kathy Darling
  */
-class WC_Product_Catalog extends WC_Product_Simple {
+class WC_Product_Catalog extends WC_Product {
 
 	/**
 	 * Supported features such as 'ajax_add_to_cart'.
