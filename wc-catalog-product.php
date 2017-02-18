@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: WC Catalog Product
+ * Plugin Name: Catalog Product for WooCommerce
  * Plugin URI:  https://github.com/helgatheviking/wc-catalog-product
- * Description: Build your own catalog from a collection of PDFs
+ * Description: Build your own print catalog from a collection of PDFs
  * Version: 0.1.0-beta
  * Author:      Kathy Darling
  * Author URI:  http://www.kathyisawesome.com
