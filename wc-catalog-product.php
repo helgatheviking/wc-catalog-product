@@ -250,6 +250,15 @@ class WC_Catalog_Product {
 		}
 	}
 
+
+	/**
+	 * Deletes the cron job.
+	 */
+	public static function deactivate() {
+		wp_clear_scheduled_hook( 'wc_catalog_product_delete_temporary_file' );
+	}
+	
+	
 } //end class: do not remove or there will be no more guacamole for you
 
 endif; // end class_exists check
@@ -270,3 +279,6 @@ add_action( 'woocommerce_loaded', 'WC_Catalog_Product' );
 
 // Install hook.
 register_activation_hook( __FILE__, array( 'WC_Catalog_Product', 'install' ) );
+
+// Deactivate hook.
+register_deactivation_hook( __FILE__, array( 'WC_Catalog_Product', 'deactivate' ) );
