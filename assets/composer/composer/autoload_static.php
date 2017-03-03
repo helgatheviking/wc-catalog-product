@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita1337f83864d56bdb6f1cc2170e26f22
+class ComposerStaticInit72d49cd15db23caa0e46ff72a2814a04
 {
     public static $classMap = array (
         'PDFMerger' => __DIR__ . '/..' . '/vaza18/pdfmerger/PDFMerger.php',
@@ -13,7 +13,7 @@ class ComposerStaticInita1337f83864d56bdb6f1cc2170e26f22
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInita1337f83864d56bdb6f1cc2170e26f22::$classMap;
+            $loader->classMap = ComposerStaticInit72d49cd15db23caa0e46ff72a2814a04::$classMap;
 
         }, null, ClassLoader::class);
     }

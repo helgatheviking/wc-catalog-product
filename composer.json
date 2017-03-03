@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "vaza18/PDFMerger": "dev-master"
+        "vaza18/PDFMerger": "dev-master",
+        "vaza18/pdfmerger": "^2.0"
     },
     "autoload": {
         "classmap": [ "assets/composer/vaza18/pdfmerger/PDFMerger.php" ]
