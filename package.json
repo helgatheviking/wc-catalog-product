@@ -1,7 +1,7 @@
 {
   "title": "WC Catalog Product",
   "name": "wc-catalog-product",
-  "version": "0.1.0-beta",
+  "version": "0.1.0",
   "description": "Build your own catalog from a collection of PDFs1",
   "main": "Gruntfile.js",
   "license": "GPL-2.0",

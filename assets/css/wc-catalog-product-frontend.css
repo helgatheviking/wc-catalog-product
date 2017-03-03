@@ -3,6 +3,6 @@
 .wc-catalog-form table tbody tr:nth-child(2n) td { background: rgba(0, 0, 0, 0.015); }
 .wc-catalog-form .catalog_table { table-layout: auto; }
 .wc-catalog-form .catalog_table td:first-child { text-align: center; }
-.wc-catalog-form div.add_to_cart_wrap { float: right; }
-.wc-catalog-form div.quantity { display: inline-block; margin: 0 4px 0 0; }
+.wc-catalog-form .add_to_cart_wrap { float: right; }
+.wc-catalog-form .quantity { display: inline-block; margin: 0 4px 0 0; }
 .wc-catalog-form .spinner { background: url("/wp-admin/images/spinner.gif") no-repeat; background-size: 16px 16px; display: none; opacity: .7; filter: alpha(opacity=70); width: 16px; height: 16px; margin: 5px 5px 0; }

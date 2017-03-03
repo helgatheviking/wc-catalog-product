@@ -2,17 +2,17 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WC Catalog Product 0.1.0-beta\n"
+"Project-Id-Version: Catalog Product for WooCommerce 0.1.0-beta\n"
 "Report-Msgid-Bugs-To: "
-"http://wordpress.org/support/plugin/wc-catalog-product\n"
-"POT-Creation-Date: 2017-02-13 21:01:42+00:00\n"
+"https://wordpress.org/support/plugin/wc-catalog-product\n"
+"POT-Creation-Date: 2017-03-03 19:24:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n1.0.0\n"
 
 #: includes/admin/class-wc-catalog-product-metabox.php:47
 #: includes/admin/class-wc-catalog-product-metabox.php:61
@@ -31,12 +31,12 @@ msgstr ""
 
 #: includes/admin/class-wc-catalog-product-metabox.php:100
 #: includes/admin/class-wc-catalog-product-metabox.php:123
-#: includes/admin/class-wc-catalog-product-metabox.php:197
+#: includes/admin/class-wc-catalog-product-metabox.php:195
 msgid "Delete PDF"
 msgstr ""
 
 #: includes/admin/class-wc-catalog-product-metabox.php:110
-#: includes/admin/class-wc-catalog-product-metabox.php:198
+#: includes/admin/class-wc-catalog-product-metabox.php:196
 msgid "Add PDF Cover"
 msgstr ""
 
@@ -49,19 +49,19 @@ msgid "Upload PDFs that will be available for merging."
 msgstr ""
 
 #: includes/admin/class-wc-catalog-product-metabox.php:132
-#: includes/admin/class-wc-catalog-product-metabox.php:200
+#: includes/admin/class-wc-catalog-product-metabox.php:198
 msgid "Add PDF to Collection"
 msgstr ""
 
-#: includes/admin/class-wc-catalog-product-metabox.php:157
+#: includes/admin/class-wc-catalog-product-metabox.php:155
 msgid "Please select at least one PDF for use in this custom catalog product."
 msgstr ""
 
-#: includes/admin/class-wc-catalog-product-metabox.php:199
+#: includes/admin/class-wc-catalog-product-metabox.php:197
 msgid "Set cover"
 msgstr ""
 
-#: includes/admin/class-wc-catalog-product-metabox.php:201
+#: includes/admin/class-wc-catalog-product-metabox.php:199
 msgid "Add to collection"
 msgstr ""
 
@@ -115,56 +115,48 @@ msgstr ""
 msgid "[{site_title}] New catalog order ({order_number}) - {order_date}"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:139
+#: includes/email/class-wc-email-new-catalog-order.php:145
 msgid "Enable/Disable"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:141
+#: includes/email/class-wc-email-new-catalog-order.php:147
 msgid "Enable this email notification"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:145
+#: includes/email/class-wc-email-new-catalog-order.php:151
 msgid "Recipient(s)"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:147
+#: includes/email/class-wc-email-new-catalog-order.php:153
 msgid "Enter recipients (comma separated) for this email. Defaults to %s."
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:153
+#: includes/email/class-wc-email-new-catalog-order.php:159
 msgid "Subject"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:155
+#: includes/email/class-wc-email-new-catalog-order.php:161
 msgid ""
 "This controls the email subject line. Leave blank to use the default "
 "subject: %s."
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:161
+#: includes/email/class-wc-email-new-catalog-order.php:167
 msgid "Email heading"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:163
+#: includes/email/class-wc-email-new-catalog-order.php:169
 msgid ""
 "This controls the main heading contained within the email notification. "
 "Leave blank to use the default heading: %s."
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:169
+#: includes/email/class-wc-email-new-catalog-order.php:175
 msgid "Email type"
 msgstr ""
 
-#: includes/email/class-wc-email-new-catalog-order.php:171
+#: includes/email/class-wc-email-new-catalog-order.php:177
 msgid "Choose which format of email to send."
-msgstr ""
-
-#: includes/wc-catalog-product-template-functions.php:12
-msgid "Before Template"
-msgstr ""
-
-#: includes/wc-catalog-product-template-functions.php:16
-msgid "After Template"
 msgstr ""
 
 #: templates/emails/admin-new-catalog-order.php:28
@@ -183,14 +175,28 @@ msgstr ""
 msgid "Download Combined Catalog"
 msgstr ""
 
-#: wc-catalog-product.php:147
+#: wc-catalog-product.php:136
 msgid ""
 "WC Catalog Product requires at least WooCommerce %s in order to function. "
 "Please upgrade WooCommerce."
 msgstr ""
 
+#: wc-catalog-product.php:214
+msgid "PDFs"
+msgstr ""
+
+#: wc-catalog-product.php:214
+msgid "Manage PDFs"
+msgstr ""
+
+#: wc-catalog-product.php:214
+msgid "PDF <span class=\"count\">(%s)</span>"
+msgid_plural "PDFs <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
 #. Plugin Name of the plugin/theme
-msgid "WC Catalog Product"
+msgid "Catalog Product for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -198,7 +204,7 @@ msgid "https://github.com/helgatheviking/wc-catalog-product"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Build your own catalog from a collection of PDFs"
+msgid "Build your own print catalog from a collection of PDFs"
 msgstr ""
 
 #. Author of the plugin/theme
